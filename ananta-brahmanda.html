@@ -1,0 +1,2587 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>अनन्त ब्रह्माण्ड · Ananta Brahmāṇḍa — The Bubble Universes of Mahā-Viṣṇu</title>
+<meta name="description" content="The Vaiṣṇava cosmological vision: innumerable universes drift like luminous bubbles from the pores of Kāraṇodakaśāyī Viṣṇu reclining in the Causal Ocean. Brahma Saṁhitā 5.47–48." />
+<meta name="theme-color" content="#050309" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600&family=Martel:wght@400;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="preload" as="image" href="krishna-yoga-nidra.png">
+
+<style>
+/* ============================================================
+   THEME · Sanatana × Cosmos
+   The Causal Ocean — black, deep indigo, gold of His form,
+   saffron of the bhakta, vermillion tilaka, parchment text.
+   ============================================================ */
+:root{
+  --bg:           #050309;
+  --bg-2:         #07060F;
+  --ocean:        #0B0E22;
+  --ocean-deep:   #06081A;
+  --surface:      #15110B;
+
+  --gold:         #D4A04C;
+  --gold-soft:    #B58840;
+  --gold-bright:  #ECC373;
+  --saffron:      #C77A2B;
+  --vermillion:   #C73E3A;
+  --vishnu-blue:  #4A6FB5;
+  --vishnu-deep:  #1F3260;
+  --lotus-pink:   #E89A8F;
+
+  --text:         #F2EDDE;
+  --text-2:       #9B9685;
+  --text-3:       #6B6555;
+  --text-4:       #43413A;
+
+  --gold-10:      rgba(212,160,76,0.10);
+  --gold-20:      rgba(212,160,76,0.22);
+  --gold-30:      rgba(212,160,76,0.32);
+  --gold-50:      rgba(212,160,76,0.55);
+  --gold-80:      rgba(212,160,76,0.85);
+  --saffron-20:   rgba(199,122,43,0.22);
+  --blue-20:      rgba(74,111,181,0.22);
+
+  --font-deva:    'Martel', serif;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  --text-mega:    clamp(54px, 11vw, 168px);
+  --text-giant:   clamp(40px, 7vw, 108px);
+  --text-large:   clamp(28px, 4.5vw, 60px);
+  --text-medium:  clamp(18px, 2.3vw, 28px);
+  --text-body:    clamp(15px, 1.4vw, 18px);
+
+  --space-section: clamp(110px, 16vw, 240px);
+  --space-block:   clamp(60px, 8vw, 120px);
+  --space-element: clamp(28px, 4vw, 60px);
+
+  --ease:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out:cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --spring:  cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Reset */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth; background:var(--bg);}
+body{
+  font-family:var(--font-body);
+  font-size:var(--text-body);
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
+  font-feature-settings:"kern" 1,"liga" 1,"calt" 1,"ss01" 1;
+}
+img,video,svg,canvas{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit; text-decoration:none}
+::selection{background:var(--gold);color:var(--bg)}
+::-webkit-scrollbar{width:3px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--gold);border-radius:10px}
+:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:4px}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+.deva{ font-family:var(--font-deva); font-size:1.1em; letter-spacing:0; }
+.cursor-fine{cursor:crosshair}
+
+/* ============================================================
+   AMBIENT LAYERS — stacked atmosphere
+   1. Ocean gradient (fixed)
+   2. Aurora (saffron + vishnu-blue gradient blobs, drifting)
+   3. Bubble universe canvas (drifting bubbles)
+   4. Flower-of-life grid (faint, fixed)
+   5. Grain noise
+   6. Vignette
+   ============================================================ */
+.layer-ocean{
+  position:fixed; inset:0; z-index:-5;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%,     rgba(212,160,76,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 80% at 50% 100%,   rgba(74,111,181,0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 90% 100% at 50% 50%,   var(--ocean) 0%, var(--ocean-deep) 50%, var(--bg) 100%);
+}
+.layer-aurora{
+  position:fixed; inset:-10%; z-index:-4; pointer-events:none;
+  filter:blur(80px); opacity:0.7;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(199,122,43,0.22), transparent 32%),
+    radial-gradient(circle at 78% 28%, rgba(74,111,181,0.20), transparent 36%),
+    radial-gradient(circle at 62% 78%, rgba(212,160,76,0.18), transparent 36%),
+    radial-gradient(circle at 14% 80%, rgba(199,62,58,0.10), transparent 34%);
+  background-size:180% 180%;
+  animation:auroraDrift 38s var(--ease) infinite alternate;
+}
+@keyframes auroraDrift{
+  0%   { transform:translate3d(-3%,-2%,0) scale(1);    background-position:0% 30%; }
+  50%  { transform:translate3d(3%,-4%,0)  scale(1.05); background-position:75% 60%; }
+  100% { transform:translate3d(0%,3%,0)   scale(1.02); background-position:100% 10%; }
+}
+#cosmos-canvas{
+  position:fixed; inset:0; z-index:-3;
+  width:100%; height:100%; pointer-events:none;
+}
+.layer-yantra{
+  position:fixed; inset:0; z-index:-2; pointer-events:none;
+  width:100%; height:100%; opacity:0.10; mix-blend-mode:screen;
+}
+.layer-grain{
+  position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:0.06; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+}
+.layer-vignette{
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background:radial-gradient(circle at center, transparent 38%, rgba(0,0,0,0.72) 100%);
+}
+
+/* ============================================================
+   KĀLA-CAKRA SCROLL PROGRESS RING (top right)
+   ============================================================ */
+.cakra{
+  position:fixed; top:22px; right:22px; z-index:120;
+  width:56px; height:56px;
+  pointer-events:none;
+}
+.cakra svg{ width:100%; height:100%; transform:rotate(-90deg); }
+.cakra .cakra-track{ stroke:rgba(212,160,76,0.12); }
+.cakra .cakra-fill{
+  stroke:var(--gold);
+  stroke-dasharray: 157;
+  stroke-dashoffset:157;
+  transition:stroke-dashoffset .15s linear;
+  filter:drop-shadow(0 0 6px rgba(212,160,76,0.55));
+}
+.cakra-spokes{
+  position:absolute; inset:0;
+  animation:cakraRotate 60s linear infinite;
+}
+.cakra-spokes svg{ transform:none; }
+@keyframes cakraRotate{ to{ transform:rotate(360deg); } }
+.cakra-center{
+  position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  width:6px; height:6px; border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 12px var(--gold);
+}
+@media(max-width:740px){ .cakra{ width:42px; height:42px; top:14px; right:14px; } }
+
+/* ============================================================
+   VERTICAL SECTION RAIL (right side)
+   ============================================================ */
+.rail{
+  position:fixed; right:30px; top:50%; transform:translateY(-50%);
+  z-index:110;
+  display:flex; flex-direction:column; gap:18px;
+  pointer-events:auto;
+}
+.rail-item{
+  position:relative;
+  width:8px; height:8px;
+  border-radius:50%;
+  background:transparent;
+  border:1px solid var(--gold-30);
+  cursor:pointer;
+  transition:all .5s var(--ease);
+}
+.rail-item::after{
+  content:attr(data-label);
+  position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:var(--font-mono); font-size:10px;
+  letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--gold);
+  white-space:nowrap;
+  opacity:0;
+  transition:opacity .35s var(--ease), transform .35s var(--ease);
+  transform:translateY(-50%) translateX(8px);
+  pointer-events:none;
+}
+.rail-item:hover{ background:var(--gold-30); border-color:var(--gold); }
+.rail-item:hover::after{ opacity:1; transform:translateY(-50%) translateX(0); }
+.rail-item.active{
+  background:var(--gold);
+  border-color:var(--gold);
+  box-shadow:0 0 16px var(--gold);
+  transform:scale(1.4);
+}
+.rail-item.active::after{ opacity:0.85; transform:translateY(-50%) translateX(0); }
+@media(max-width:980px){ .rail{ display:none; } }
+
+/* ============================================================
+   LAYOUT PRIMITIVES
+   ============================================================ */
+.wrap{ max-width:1400px; margin:0 auto; padding:0 clamp(20px,5vw,80px); position:relative; z-index:1; }
+.section{ padding-top:var(--space-section); padding-bottom:var(--space-section); position:relative; }
+
+.eyebrow{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:0.32em;
+  text-transform:uppercase; color:var(--gold); opacity:0.9;
+  display:inline-flex; align-items:center; gap:14px;
+}
+.eyebrow::before{ content:''; width:30px; height:1px; background:linear-gradient(90deg, transparent, var(--gold)); opacity:0.7; }
+
+.head-display{
+  font-family:var(--font-display); font-weight:300;
+  font-size:var(--text-giant); line-height:0.98; letter-spacing:-0.02em;
+  color:var(--text);
+}
+.head-display em{ font-style:italic; color:var(--gold); font-weight:300; }
+
+.lede{
+  font-family:var(--font-display); font-style:italic; font-weight:300;
+  font-size:var(--text-medium); line-height:1.45; color:var(--text);
+  max-width:62ch;
+}
+
+/* Scroll reveal */
+[data-reveal]{
+  opacity:0; transform:translateY(40px);
+  transition:opacity 1.2s var(--ease), transform 1.2s var(--ease);
+}
+[data-reveal].in{ opacity:1; transform:translateY(0); }
+[data-reveal~="d1"]{ transition-delay:.1s; }
+[data-reveal~="d2"]{ transition-delay:.25s; }
+[data-reveal~="d3"]{ transition-delay:.42s; }
+[data-reveal~="d4"]{ transition-delay:.6s; }
+
+/* Character cascade — each .char drops in */
+.cascade{ display:inline-block; }
+.cascade .char{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(0.4em) rotate(6deg);
+  transition:opacity 0.8s var(--ease), transform 0.8s var(--spring);
+  transform-origin: 50% 100%;
+}
+.cascade .char.in{ opacity:1; transform:translateY(0) rotate(0); }
+.cascade .ws{ display:inline-block; width:0.28em; }
+
+/* Headline scatter on hover */
+.scatter .char{
+  display:inline-block;
+  transition:transform 0.7s var(--spring), color 0.6s var(--ease);
+  will-change:transform;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:22px clamp(20px,4vw,56px) 22px clamp(20px,4vw,56px);
+  backdrop-filter:blur(14px) saturate(140%);
+  background:linear-gradient(180deg, rgba(5,3,9,0.75), rgba(5,3,9,0));
+  border-bottom:1px solid rgba(212,160,76,0.08);
+  transition:background .4s var(--ease), border-color .4s var(--ease);
+}
+.nav.scrolled{
+  background:rgba(5,3,9,0.92);
+  border-bottom-color:rgba(212,160,76,0.18);
+}
+.nav-brand{
+  display:flex; align-items:center; gap:14px;
+  font-family:var(--font-display); font-style:italic; font-weight:500;
+  font-size:18px; color:var(--gold); letter-spacing:0.01em;
+  z-index:1;
+}
+.nav-brand-mark{
+  width:28px; height:28px; position:relative;
+}
+.nav-brand-mark svg{ position:absolute; inset:0; }
+.nav-brand-mark .spin{ animation:cakraRotate 40s linear infinite; }
+.nav-links{
+  display:flex; gap:36px;
+  padding-right:80px;
+}
+.nav-link{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--text-2); text-decoration:none; transition:color .35s var(--ease);
+  position:relative;
+}
+.nav-link::after{
+  content:''; position:absolute; left:0; right:0; bottom:-6px;
+  height:1px; background:var(--gold);
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .4s var(--ease);
+}
+.nav-link:hover{ color:var(--gold); }
+.nav-link:hover::after{ transform:scaleX(1); }
+@media(max-width:740px){ .nav-links{ display:none; } }
+
+/* ============================================================
+   MAGNETIC BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex; align-items:center; gap:14px;
+  padding:18px 38px;
+  background:var(--gold); color:var(--bg);
+  font-family:var(--font-body); font-weight:500; font-size:13px;
+  letter-spacing:0.18em; text-transform:uppercase;
+  border:none; border-radius:100px; cursor:pointer;
+  text-decoration:none;
+  position:relative; overflow:hidden;
+  transition:background .4s var(--ease), box-shadow .4s var(--ease);
+  will-change: transform;
+}
+.btn::before{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(255,255,255,0.35), transparent 50%);
+  opacity:0; transition:opacity .4s var(--ease);
+}
+.btn:hover{ box-shadow:0 24px 60px rgba(212,160,76,0.4), 0 0 0 1px rgba(212,160,76,0.3); }
+.btn:hover::before{ opacity:1; }
+.btn-arrow{ transition:transform .4s var(--ease); }
+.btn:hover .btn-arrow{ transform:translateX(6px); }
+
+.btn-ghost{
+  background:transparent; color:var(--gold);
+  border:1px solid var(--gold-30);
+  padding:17px 36px;
+}
+.btn-ghost:hover{
+  border-color:var(--gold);
+  background:rgba(212,160,76,0.05);
+  box-shadow:0 18px 40px rgba(212,160,76,0.15);
+}
+
+/* ============================================================
+   HERO — ACT 1: THE ARREST
+   ============================================================ */
+.hero{
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  padding:140px clamp(20px,5vw,80px) 110px;
+  position:relative;
+  text-align:center;
+  gap:clamp(40px, 6vh, 70px);
+}
+
+.hero-eyebrow{ margin:0 auto; }
+
+.hero-verse{
+  font-family:var(--font-deva); font-weight:700;
+  font-size:clamp(14px, 1.5vw, 19px);
+  color:var(--gold);
+  line-height:1.95;
+  letter-spacing:0.01em;
+  margin:24px auto 0;
+  max-width:50ch;
+  opacity:0.95;
+}
+.hero-verse-en{
+  margin-top:18px;
+  font-family:var(--font-display); font-style:italic; font-weight:300;
+  font-size:clamp(13px, 1.1vw, 16px);
+  color:var(--text-2);
+  line-height:1.55;
+  max-width:44ch; margin-left:auto; margin-right:auto;
+}
+
+/* The Sacred Icon — Govinda in yoga-nidrā */
+.hero-icon{
+  position:relative;
+  width:min(78vw, 540px);
+  aspect-ratio: 1 / 1;
+  flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  opacity:0;
+  transform:scale(0.94);
+  transition:opacity 2.6s var(--ease) 0.4s, transform 2.6s var(--ease) 0.4s;
+}
+.hero-icon.in{ opacity:1; transform:scale(1); }
+
+.hero-icon-halo{
+  position:absolute; inset:-30%;
+  background:
+    radial-gradient(circle at center,
+      rgba(212,160,76,0.30) 0%,
+      rgba(199,122,43,0.18) 25%,
+      rgba(74,111,181,0.10) 50%,
+      transparent 72%);
+  filter:blur(8px);
+  animation:haloBreath 8s var(--ease) infinite;
+  pointer-events:none;
+  z-index:0;
+}
+@keyframes haloBreath{
+  0%,100%{ opacity:0.85; transform:scale(1); }
+  50%   { opacity:1;    transform:scale(1.07); }
+}
+
+/* Outer rotating sacred-geometry ring */
+.hero-icon-ring{
+  position:absolute; inset:-8%;
+  pointer-events:none;
+  z-index:1;
+  animation:cakraRotate 140s linear infinite;
+  opacity:0.55;
+}
+
+/* Counter-rotating inner ring */
+.hero-icon-ring-2{
+  position:absolute; inset:-2%;
+  pointer-events:none;
+  z-index:1;
+  animation:cakraRotateRev 90s linear infinite;
+  opacity:0.35;
+}
+@keyframes cakraRotateRev{ from{ transform:rotate(360deg); } to{ transform:rotate(0deg); } }
+
+/* Inner gold frame containing the image */
+.hero-icon-frame{
+  position:relative;
+  width:100%; height:100%;
+  border-radius:50%;
+  overflow:hidden;
+  z-index:2;
+  box-shadow:
+    inset 0 0 0 1px rgba(212,160,76,0.6),
+    inset 0 0 0 6px rgba(5,3,9,0.4),
+    inset 0 0 0 7px rgba(212,160,76,0.3),
+    0 0 90px rgba(212,160,76,0.40),
+    0 0 180px rgba(74,111,181,0.25),
+    0 40px 120px rgba(0,0,0,0.7);
+}
+.hero-icon-frame img{
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position: 52% 38%;
+  display:block;
+  filter: contrast(1.04) saturate(1.06) brightness(0.96);
+}
+.hero-icon-frame::after{
+  content:''; position:absolute; inset:0;
+  border-radius:50%;
+  background:
+    radial-gradient(circle at 50% 50%,
+      transparent 60%,
+      rgba(5,3,9,0.35) 90%,
+      rgba(5,3,9,0.7) 100%);
+  pointer-events:none;
+}
+
+.hero-icon-cap{
+  position:absolute; left:50%; bottom:-46px;
+  transform:translateX(-50%);
+  font-family:var(--font-mono); font-size:10px; letter-spacing:0.32em;
+  text-transform:uppercase; color:var(--gold); opacity:0.85;
+  white-space:nowrap;
+  z-index:3;
+}
+.hero-icon-cap::before, .hero-icon-cap::after{
+  content:''; display:inline-block; width:24px; height:1px;
+  background:var(--gold); opacity:0.5;
+  vertical-align:middle; margin:0 14px;
+}
+
+.hero-inner{ position:relative; z-index:2; max-width:1100px; margin:0 auto; }
+
+.hero-title{
+  font-family:var(--font-display); font-weight:300;
+  font-size:clamp(46px, 9.5vw, 142px);
+  line-height:0.94; letter-spacing:-0.025em;
+  margin:0 0 24px;
+  color:var(--text);
+}
+.hero-title em{ font-style:italic; color:var(--gold); }
+.hero-title .line{ display:block; overflow:hidden; padding-bottom:0.05em; }
+
+.hero-sub{
+  font-family:var(--font-display); font-style:italic; font-weight:300;
+  font-size:var(--text-medium);
+  color:var(--text-2);
+  max-width:46ch; margin:0 auto 30px;
+  line-height:1.5;
+}
+
+.hero-actions{
+  display:flex; gap:14px; justify-content:center; flex-wrap:wrap;
+  margin-top:14px;
+}
+
+.hero-scroll-hint{
+  position:absolute; bottom:38px; left:50%; transform:translateX(-50%);
+  font-family:var(--font-mono); font-size:10px; letter-spacing:0.32em;
+  text-transform:uppercase; color:var(--text-3);
+  display:flex; flex-direction:column; align-items:center; gap:14px;
+  opacity:0; animation:fadeIn 1s var(--ease) 2.8s forwards;
+}
+.hero-scroll-hint::after{
+  content:''; width:1px; height:42px;
+  background:linear-gradient(180deg, var(--gold), transparent);
+  animation:scrollPulse 2.4s var(--ease) infinite;
+}
+@keyframes scrollPulse{
+  0%   { transform:scaleY(0); transform-origin:top; }
+  50%  { transform:scaleY(1); transform-origin:top; }
+  51%  { transform-origin:bottom; }
+  100% { transform:scaleY(0); transform-origin:bottom; }
+}
+@keyframes fadeIn{ to{ opacity:1; } }
+
+@media(max-width:740px){
+  .hero-icon{ width:min(86vw, 360px); }
+  .hero-icon-cap{ bottom:-38px; font-size:9px; letter-spacing:0.26em; }
+  .hero-icon-cap::before, .hero-icon-cap::after{ width:14px; margin:0 8px; }
+}
+
+/* ============================================================
+   ACT 2 — THE CAUSAL OCEAN (with animated SVG diagram)
+   ============================================================ */
+.intrigue-grid{
+  display:grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap:clamp(40px, 8vw, 120px);
+  align-items:start;
+}
+@media(max-width:880px){ .intrigue-grid{ grid-template-columns:1fr; } }
+
+.intrigue-side .eyebrow{ margin-bottom:30px; }
+.intrigue-side .head-display{ margin-bottom:36px; }
+
+.intrigue-deva{
+  font-family:var(--font-deva); font-weight:800;
+  font-size:clamp(34px, 5vw, 70px);
+  color:var(--saffron); line-height:1.15;
+  margin-bottom:18px;
+}
+.intrigue-translit{
+  font-family:var(--font-display); font-style:italic; font-weight:400;
+  font-size:clamp(20px, 2.4vw, 30px);
+  color:var(--gold);
+  margin-bottom:36px;
+  letter-spacing:0.005em;
+}
+
+.intrigue-body{ font-size:var(--text-body); line-height:1.78; color:var(--text); }
+.intrigue-body p{ margin-bottom:22px; }
+.intrigue-body p:last-child{ margin-bottom:0; }
+.intrigue-body .term{
+  font-family:var(--font-display); font-style:italic;
+  color:var(--gold); white-space:nowrap;
+}
+
+/* Emanation diagram panel — SVG draws on scroll */
+.form-panel{
+  position:relative;
+  aspect-ratio: 4/5;
+  border-radius:8px;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 100%, rgba(74,111,181,0.30), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 50% 30%, rgba(212,160,76,0.10), transparent 70%),
+    linear-gradient(180deg, #0A0C1E 0%, #060414 100%);
+  border:1px solid rgba(212,160,76,0.22);
+  display:flex; align-items:center; justify-content:center;
+  padding:30px;
+}
+.form-panel-frame{
+  position:absolute; inset:14px;
+  border:1px solid rgba(212,160,76,0.10);
+  pointer-events:none;
+}
+.form-panel-corner{ position:absolute; width:18px; height:18px; border:1px solid var(--gold); }
+.form-panel-corner.tl{ top:8px; left:8px; border-right:none; border-bottom:none; }
+.form-panel-corner.tr{ top:8px; right:8px; border-left:none; border-bottom:none; }
+.form-panel-corner.bl{ bottom:8px; left:8px; border-right:none; border-top:none; }
+.form-panel-corner.br{ bottom:8px; right:8px; border-left:none; border-top:none; }
+.form-panel svg{ width:100%; height:auto; max-height:100%; position:relative; z-index:1; }
+.form-panel-label{
+  position:absolute; bottom:26px; left:0; right:0; text-align:center;
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.28em;
+  text-transform:uppercase; color:var(--gold); opacity:0.80;
+  z-index:2;
+}
+
+/* SVG draw-on-scroll classes */
+.draw-path{
+  stroke-dasharray: var(--len, 1000);
+  stroke-dashoffset: var(--len, 1000);
+}
+.draw-path.in{
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 2.4s var(--ease);
+}
+.fade-in{ opacity:0; transition: opacity 1.6s var(--ease); transition-delay:1.2s; }
+.fade-in.in{ opacity:1; }
+
+/* ============================================================
+   ACT 3 — THE BREATH (interactive control panel)
+   ============================================================ */
+.proof-intro{
+  text-align:center; max-width:62ch; margin:0 auto var(--space-block);
+}
+.proof-intro .eyebrow{ justify-content:center; margin-bottom:28px; display:inline-flex; }
+
+.metrics{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:0;
+  border-top:1px solid var(--gold-20);
+  border-bottom:1px solid var(--gold-20);
+  margin-bottom:var(--space-block);
+}
+@media(max-width:840px){ .metrics{ grid-template-columns:1fr; } }
+.metric{
+  padding:clamp(40px, 6vw, 80px) clamp(24px, 4vw, 50px);
+  position:relative;
+  text-align:left;
+}
+.metric + .metric{ border-left:1px solid var(--gold-20); }
+@media(max-width:840px){ .metric + .metric{ border-left:none; border-top:1px solid var(--gold-20); } }
+.metric-num{
+  font-family:var(--font-display); font-weight:300;
+  font-size:clamp(56px, 9vw, 130px);
+  line-height:0.9; letter-spacing:-0.04em;
+  color:var(--gold);
+  margin-bottom:14px;
+}
+.metric-num small{
+  font-family:var(--font-mono); font-size:0.18em; letter-spacing:0.18em;
+  display:inline-block; vertical-align:top; margin-left:6px;
+  color:var(--text-2); opacity:0.85;
+}
+.metric-label{
+  font-family:var(--font-mono); font-size:10px; letter-spacing:0.32em;
+  text-transform:uppercase; color:var(--saffron);
+  margin-bottom:14px;
+}
+.metric-desc{
+  font-family:var(--font-display); font-style:italic; font-weight:400;
+  font-size:clamp(17px, 1.6vw, 21px); line-height:1.4;
+  color:var(--text);
+  max-width:24ch;
+}
+
+/* The Breath Panel — interactive cosmic-time calculator */
+.breath-panel{
+  position:relative;
+  border:1px solid var(--gold-20);
+  border-radius:20px;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,160,76,0.06), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(74,111,181,0.10), transparent 60%),
+    linear-gradient(180deg, rgba(10,8,15,0.6), rgba(7,5,12,0.7));
+  overflow:hidden;
+  padding:clamp(36px, 5vw, 64px);
+  backdrop-filter:blur(10px);
+}
+.breath-panel-grid{
+  display:grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap:clamp(36px, 5vw, 70px);
+  align-items:center;
+}
+@media(max-width:880px){ .breath-panel-grid{ grid-template-columns:1fr; } }
+
+.breath-panel-controls .eyebrow{ margin-bottom:24px; }
+.breath-panel-controls h3{
+  font-family:var(--font-display); font-weight:300;
+  font-size:clamp(28px, 3.6vw, 48px);
+  line-height:1.05; letter-spacing:-0.02em;
+  margin-bottom:18px;
+  color:var(--text);
+}
+.breath-panel-controls h3 em{ font-style:italic; color:var(--gold); }
+.breath-panel-controls p{
+  color:var(--text-2); margin-bottom:30px;
+  max-width:36ch; line-height:1.65;
+  font-size:14.5px;
+}
+
+.slider-row{ display:grid; gap:10px; margin:24px 0; }
+.slider-label{
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:var(--font-mono); font-size:10.5px;
+  letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--saffron);
+}
+.slider-label-val{
+  color:var(--gold); letter-spacing:0.1em;
+  font-size:11px;
+}
+input[type=range].cosmic{
+  -webkit-appearance:none; appearance:none;
+  width:100%; height:2px;
+  background:linear-gradient(90deg, var(--gold) 0%, var(--gold) var(--p, 50%), rgba(212,160,76,0.15) var(--p, 50%), rgba(212,160,76,0.15) 100%);
+  outline:none;
+  cursor:pointer;
+}
+input[type=range].cosmic::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none;
+  width:18px; height:18px; border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 16px rgba(212,160,76,0.6), 0 0 0 5px rgba(212,160,76,0.10);
+  cursor:grab;
+  border:none;
+  transition:transform .25s var(--spring);
+}
+input[type=range].cosmic::-webkit-slider-thumb:active{ transform:scale(1.25); cursor:grabbing; }
+input[type=range].cosmic::-moz-range-thumb{
+  width:18px; height:18px; border-radius:50%;
+  background:var(--gold);
+  box-shadow:0 0 16px rgba(212,160,76,0.6);
+  cursor:grab;
+  border:none;
+}
+
+.breath-readout{
+  display:grid; grid-template-columns:1fr 1fr; gap:14px;
+  margin-top:32px;
+}
+.readout-cell{
+  padding:18px 20px;
+  border:1px solid rgba(212,160,76,0.18);
+  border-radius:14px;
+  background:rgba(5,3,9,0.5);
+}
+.readout-cell-label{
+  font-family:var(--font-mono); font-size:9.5px;
+  letter-spacing:0.24em; text-transform:uppercase;
+  color:var(--text-3);
+  margin-bottom:8px;
+}
+.readout-cell-val{
+  font-family:var(--font-display);
+  font-size:clamp(18px, 2vw, 26px);
+  font-weight:400;
+  color:var(--gold);
+  line-height:1.1;
+  letter-spacing:-0.015em;
+  font-feature-settings:"tnum" 1;
+}
+
+/* Right side: live breath visualization */
+.breath-stage{
+  position:relative;
+  aspect-ratio:1;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(212,160,76,0.15);
+  background:
+    radial-gradient(circle at 50% 50%, rgba(74,111,181,0.20) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(2,3,12,0.7), rgba(5,3,9,0.85));
+}
+.breath-canvas{ position:absolute; inset:0; width:100%; height:100%; }
+.breath-stage-info{
+  position:absolute; top:18px; left:18px; right:18px;
+  display:flex; justify-content:space-between;
+  font-family:var(--font-mono); font-size:9.5px;
+  letter-spacing:0.22em; text-transform:uppercase;
+  color:var(--gold); opacity:0.7;
+  pointer-events:none;
+}
+
+/* ============================================================
+   ACT 4 — THE THREE VIṢṆUS (cards with cursor-following highlight)
+   ============================================================ */
+.three-intro{
+  display:grid; grid-template-columns:1fr 1.6fr;
+  gap:clamp(40px, 7vw, 100px);
+  margin-bottom:var(--space-block);
+  align-items:end;
+}
+@media(max-width:880px){ .three-intro{ grid-template-columns:1fr; } }
+
+.three-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+}
+@media(max-width:980px){ .three-grid{ grid-template-columns:1fr; } }
+
+.vishnu-card{
+  position:relative;
+  background:
+    linear-gradient(180deg, rgba(212,160,76,0.04), rgba(212,160,76,0)),
+    rgba(8,10,22,0.58);
+  backdrop-filter:blur(14px) saturate(150%);
+  border:1px solid rgba(212,160,76,0.18);
+  border-radius:16px;
+  padding:clamp(28px, 3.5vw, 44px);
+  overflow:hidden;
+  transition:transform .6s var(--ease), border-color .6s var(--ease);
+  cursor:default;
+}
+.vishnu-card::before{
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(circle 280px at var(--cx, 50%) var(--cy, 50%), rgba(212,160,76,0.16), transparent 60%);
+  opacity:0;
+  transition:opacity .5s var(--ease);
+  pointer-events:none;
+  border-radius:16px;
+}
+.vishnu-card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(212,160,76,0.35);
+}
+.vishnu-card:hover::before{ opacity:1; }
+.vishnu-card > *{ position:relative; z-index:1; }
+
+.vishnu-card-num{
+  font-family:var(--font-mono); font-size:11px; letter-spacing:0.28em;
+  color:var(--gold); opacity:0.7; margin-bottom:24px;
+}
+.vishnu-card-deva{
+  font-family:var(--font-deva); font-weight:700;
+  font-size:clamp(22px, 2.3vw, 30px);
+  color:var(--saffron); line-height:1.25; margin-bottom:10px;
+}
+.vishnu-card-name{
+  font-family:var(--font-display); font-style:italic; font-weight:400;
+  font-size:clamp(22px, 2vw, 28px); line-height:1.2;
+  color:var(--gold);
+  margin-bottom:18px;
+}
+.vishnu-card-role{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.24em;
+  text-transform:uppercase; color:var(--text-2);
+  margin-bottom:24px;
+}
+.vishnu-card-body{ font-size:14.5px; line-height:1.72; color:var(--text); }
+.vishnu-card-icon{
+  width:48px; height:48px; margin-bottom:30px;
+  color:var(--gold);
+}
+
+/* ============================================================
+   ACT 5 — INTERACTIVE BUBBLE FIELD
+   ============================================================ */
+.field{
+  position:relative;
+  padding-top:var(--space-section);
+  padding-bottom:var(--space-section);
+}
+.field-intro{
+  text-align:center; max-width:60ch; margin:0 auto 60px;
+}
+.field-stage{
+  position:relative;
+  height:min(72vh, 720px);
+  border-radius:18px;
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 100%, rgba(74,111,181,0.30), transparent 70%),
+    radial-gradient(ellipse 80% 70% at 50% 0%, rgba(212,160,76,0.06), transparent 60%),
+    linear-gradient(180deg, #07091B 0%, #04060F 100%);
+  border:1px solid rgba(212,160,76,0.16);
+  cursor:crosshair;
+}
+.field-canvas{ position:absolute; inset:0; width:100%; height:100%; }
+.field-source{
+  position:absolute; left:50%; bottom:0; transform:translate(-50%, 35%);
+  width:520px; height:520px;
+  background:radial-gradient(circle at center, rgba(212,160,76,0.30) 0%, rgba(74,111,181,0.22) 30%, transparent 60%);
+  filter:blur(10px);
+  pointer-events:none;
+  animation:sourceBreath 8s var(--ease) infinite;
+}
+@keyframes sourceBreath{
+  0%,100%{ transform:translate(-50%, 35%) scale(1);    opacity:0.85; }
+  50%   { transform:translate(-50%, 35%) scale(1.08); opacity:1;    }
+}
+.field-info{
+  position:absolute;
+  top:24px; left:28px; right:28px;
+  display:flex; justify-content:space-between; align-items:flex-start;
+  pointer-events:none; z-index:3;
+}
+.field-info-label{
+  font-family:var(--font-mono); font-size:10px; letter-spacing:0.3em;
+  text-transform:uppercase; color:var(--gold); opacity:0.85;
+}
+.field-info-hint{
+  font-family:var(--font-display); font-style:italic;
+  font-size:14px; color:var(--text-2);
+}
+.field-readout{
+  position:absolute; left:28px; bottom:28px;
+  font-family:var(--font-mono); font-size:11px; color:var(--gold);
+  letter-spacing:0.18em; pointer-events:none; z-index:3;
+  background:rgba(5,3,9,0.6); backdrop-filter:blur(8px);
+  padding:14px 18px; border-radius:8px;
+  border:1px solid rgba(212,160,76,0.22);
+  opacity:0; transition:opacity .35s var(--ease);
+  min-width:280px;
+}
+.field-readout.show{ opacity:1; }
+.field-readout-title{
+  font-family:var(--font-display); font-style:italic;
+  font-size:15px; color:var(--text);
+  letter-spacing:0; margin-bottom:4px;
+}
+.field-readout-meta{ font-size:10px; color:var(--text-2); }
+
+/* ============================================================
+   ACT 6 — SCRIPTURE (conic-gradient rotating borders)
+   ============================================================ */
+.scripture-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:32px;
+}
+@media(max-width:880px){ .scripture-grid{ grid-template-columns:1fr; } }
+
+.scripture-card{
+  position:relative;
+  padding:clamp(32px, 4vw, 52px);
+  background:
+    linear-gradient(180deg, rgba(212,160,76,0.04), transparent),
+    rgba(10,8,15,0.6);
+  border-radius:14px;
+  isolation:isolate;
+}
+/* Rotating conic-gradient border */
+.scripture-card::before{
+  content:''; position:absolute; inset:-1px;
+  border-radius:15px;
+  background:conic-gradient(
+    from var(--angle, 0deg),
+    transparent 0deg,
+    rgba(212,160,76,0.55) 60deg,
+    transparent 110deg,
+    rgba(74,111,181,0.45) 200deg,
+    transparent 260deg,
+    rgba(212,160,76,0.35) 320deg,
+    transparent 360deg
+  );
+  z-index:-1;
+  animation:angleRotate 16s linear infinite;
+}
+.scripture-card::after{
+  content:''; position:absolute; inset:1px;
+  border-radius:13px;
+  background:
+    linear-gradient(180deg, rgba(212,160,76,0.03), transparent),
+    rgba(10,8,15,0.85);
+  z-index:-1;
+}
+@property --angle{
+  syntax:'<angle>';
+  initial-value:0deg;
+  inherits:false;
+}
+@keyframes angleRotate{
+  to{ --angle: 360deg; }
+}
+@supports not (background:conic-gradient(from var(--angle, 0deg), red, blue)){
+  .scripture-card::before{
+    background:linear-gradient(135deg, rgba(212,160,76,0.4), transparent 50%, rgba(74,111,181,0.3));
+    animation:none;
+  }
+}
+
+.scripture-card-tag{
+  display:inline-block;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:0.26em;
+  text-transform:uppercase; color:var(--saffron);
+  padding:6px 12px;
+  border:1px solid rgba(199,122,43,0.32);
+  border-radius:100px;
+  margin-bottom:24px;
+}
+.scripture-deva{
+  font-family:var(--font-deva); font-weight:700;
+  font-size:clamp(17px, 1.55vw, 22px);
+  color:var(--gold); line-height:1.85;
+  margin-bottom:20px;
+  letter-spacing:0;
+}
+.scripture-translit{
+  font-family:var(--font-display); font-style:italic; font-weight:400;
+  font-size:16px; line-height:1.65; color:var(--text);
+  margin-bottom:22px;
+  opacity:0.92;
+}
+.scripture-translation{
+  font-size:15px; line-height:1.68; color:var(--text);
+}
+.scripture-translation strong{ color:var(--gold); font-weight:500; }
+.scripture-attrib{
+  margin-top:22px;
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.18em;
+  color:var(--text-2);
+}
+
+/* ============================================================
+   ACT 7 — MODERN ECHO
+   ============================================================ */
+.echo{
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:0;
+  background:linear-gradient(180deg, rgba(5,3,9,0.4), rgba(5,3,9,0.6));
+  border-top:1px solid var(--gold-20);
+  border-bottom:1px solid var(--gold-20);
+}
+@media(max-width:880px){ .echo{ grid-template-columns:1fr; } }
+.echo-col{
+  padding:clamp(50px, 7vw, 100px) clamp(28px, 5vw, 70px);
+  position:relative;
+}
+.echo-col + .echo-col{ border-left:1px solid var(--gold-20); }
+@media(max-width:880px){ .echo-col + .echo-col{ border-left:none; border-top:1px solid var(--gold-20); } }
+.echo-col h3{
+  font-family:var(--font-display); font-weight:300;
+  font-size:clamp(28px, 3.4vw, 44px); line-height:1.05; letter-spacing:-0.015em;
+  margin-bottom:32px;
+}
+.echo-col h3 em{ font-style:italic; color:var(--gold); }
+.echo-col p{ margin-bottom:18px; line-height:1.75; }
+.echo-col p:last-of-type{ margin-bottom:0; }
+.echo-row{
+  display:grid; grid-template-columns:120px 1fr; gap:20px;
+  padding:14px 0;
+  border-top:1px solid rgba(212,160,76,0.08);
+}
+.echo-row:first-of-type{ border-top:1px solid var(--gold-20); margin-top:32px; }
+.echo-row-key{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.22em;
+  text-transform:uppercase; color:var(--saffron);
+  padding-top:3px;
+}
+.echo-row-val{ font-size:15px; color:var(--text); line-height:1.5; }
+
+/* ============================================================
+   ACT 8 — INVITATION
+   ============================================================ */
+.invitation{
+  text-align:center;
+  padding:clamp(120px, 18vw, 220px) 0;
+  position:relative;
+}
+.invitation-mark{
+  width:64px; height:64px; margin:0 auto 40px;
+  color:var(--gold); opacity:0.85;
+  animation:cakraRotate 80s linear infinite;
+}
+.invitation-title{
+  font-family:var(--font-display); font-weight:300; font-style:italic;
+  font-size:clamp(36px, 6vw, 84px);
+  line-height:1.05; letter-spacing:-0.02em;
+  color:var(--text);
+  max-width:18ch; margin:0 auto 28px;
+}
+.invitation-title em{ color:var(--gold); }
+.invitation-sub{
+  font-family:var(--font-display); font-weight:300;
+  font-size:var(--text-medium);
+  color:var(--text-2);
+  max-width:46ch; margin:0 auto 50px;
+  line-height:1.5;
+}
+.invitation-deva{
+  font-family:var(--font-deva); font-weight:700;
+  font-size:clamp(18px, 2vw, 28px);
+  color:var(--saffron); margin-bottom:14px;
+}
+
+/* ============================================================
+   ORNAMENT
+   ============================================================ */
+.ornament{
+  display:flex; align-items:center; justify-content:center;
+  margin:0 auto;
+  gap:24px;
+}
+.ornament-line{ width:60px; height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent); }
+.ornament-mark{ width:18px; height:18px; color:var(--gold); opacity:0.8; }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.foot{
+  padding:60px clamp(20px,5vw,80px) 50px;
+  border-top:1px solid rgba(212,160,76,0.10);
+  display:grid; grid-template-columns:1fr auto 1fr;
+  gap:30px;
+  align-items:center;
+}
+@media(max-width:740px){ .foot{ grid-template-columns:1fr; text-align:center; } }
+.foot-left{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.22em;
+  color:var(--text-3); text-transform:uppercase;
+}
+.foot-mark{
+  font-family:var(--font-display); font-style:italic;
+  color:var(--gold); font-size:18px;
+  text-align:center;
+}
+.foot-right{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:0.22em;
+  color:var(--text-3); text-transform:uppercase; text-align:right;
+}
+@media(max-width:740px){ .foot-right{ text-align:center; } }
+
+</style>
+</head>
+<body>
+
+<!-- Ambient stack -->
+<div class="layer-ocean" aria-hidden="true"></div>
+<div class="layer-aurora" aria-hidden="true"></div>
+<canvas id="cosmos-canvas" aria-hidden="true"></canvas>
+<svg class="layer-yantra" viewBox="0 0 600 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <pattern id="flower" x="0" y="0" width="120" height="103.92" patternUnits="userSpaceOnUse">
+      <g fill="none" stroke="#D4A04C" stroke-width="0.4" opacity="0.55">
+        <circle cx="60" cy="51.96" r="36"/>
+        <circle cx="0"  cy="0"     r="36"/>
+        <circle cx="120" cy="0"    r="36"/>
+        <circle cx="0"  cy="103.92" r="36"/>
+        <circle cx="120" cy="103.92" r="36"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#flower)"/>
+</svg>
+<div class="layer-grain" aria-hidden="true"></div>
+<div class="layer-vignette" aria-hidden="true"></div>
+
+<!-- Kāla-cakra scroll progress (top-right) -->
+<div class="cakra" aria-hidden="true">
+  <svg viewBox="0 0 60 60">
+    <circle class="cakra-track" cx="30" cy="30" r="25" fill="none" stroke-width="2"/>
+    <circle class="cakra-fill" id="cakraFill" cx="30" cy="30" r="25" fill="none" stroke-width="2" stroke-linecap="round"/>
+  </svg>
+  <div class="cakra-spokes">
+    <svg viewBox="0 0 60 60">
+      <g stroke="#D4A04C" stroke-width="0.5" opacity="0.45">
+        <line x1="30" y1="6"  x2="30" y2="14"/>
+        <line x1="30" y1="46" x2="30" y2="54"/>
+        <line x1="6"  y1="30" x2="14" y2="30"/>
+        <line x1="46" y1="30" x2="54" y2="30"/>
+        <line x1="12" y1="12" x2="17" y2="17"/>
+        <line x1="48" y1="12" x2="43" y2="17"/>
+        <line x1="12" y1="48" x2="17" y2="43"/>
+        <line x1="48" y1="48" x2="43" y2="43"/>
+      </g>
+    </svg>
+  </div>
+  <span class="cakra-center"></span>
+</div>
+
+<!-- Vertical section rail -->
+<nav class="rail" aria-label="Section navigation" id="sectionRail">
+  <a class="rail-item" data-label="Govinda" data-target="#top" aria-label="Top"></a>
+  <a class="rail-item" data-label="Causal Ocean" data-target="#ocean"></a>
+  <a class="rail-item" data-label="The Breath" data-target="#breath"></a>
+  <a class="rail-item" data-label="Three Viṣṇus" data-target="#trinity"></a>
+  <a class="rail-item" data-label="Bubble Field" data-target="#field"></a>
+  <a class="rail-item" data-label="Scripture" data-target="#scripture"></a>
+  <a class="rail-item" data-label="The Echo" data-target="#echo-section"></a>
+  <a class="rail-item" data-label="Invitation" data-target="#invitation"></a>
+</nav>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a class="nav-brand" href="#top">
+    <span class="nav-brand-mark">
+      <svg viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="0.8" opacity="0.4"/>
+      </svg>
+      <svg class="spin" viewBox="0 0 32 32" fill="none">
+        <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+        <circle cx="16" cy="16" r="2" fill="currentColor"/>
+        <g stroke="currentColor" stroke-width="0.6" opacity="0.55">
+          <line x1="16" y1="2"  x2="16" y2="30"/>
+          <line x1="2"  y1="16" x2="30" y2="16"/>
+        </g>
+      </svg>
+    </span>
+    Ananta Brahmāṇḍa
+  </a>
+  <div class="nav-links">
+    <a class="nav-link" href="#ocean">Ocean</a>
+    <a class="nav-link" href="#breath">Breath</a>
+    <a class="nav-link" href="#trinity">Three Viṣṇus</a>
+    <a class="nav-link" href="#field">Universes</a>
+    <a class="nav-link" href="#scripture">Scripture</a>
+  </div>
+</nav>
+
+<!-- ================================================
+     ACT 1 · THE ARREST
+     ================================================ -->
+<header class="hero" id="top">
+
+  <div class="hero-inner" style="max-width:760px;">
+    <span class="eyebrow hero-eyebrow" data-reveal>Brahma Saṁhitā · 5.48</span>
+
+    <p class="hero-verse cascade" id="heroVerse" data-reveal="d1" lang="sa" aria-label="यस्यैकनिश्वसितकालमथावलम्ब्य जीवन्ति लोमविलजा जगदण्डनाथाः । विष्णुर्महान् स इह यस्य कलाविशेषो गोविन्दमादिपुरुषं तमहं भजामि ॥">यस्यैकनिश्वसितकालमथावलम्ब्य जीवन्ति लोमविलजा जगदण्डनाथाः । विष्णुर्महान् स इह यस्य कलाविशेषो गोविन्दमादिपुरुषं तमहं भजामि ॥</p>
+
+    <p class="hero-verse-en" data-reveal="d3">
+      "He from whose breath the lords of innumerable universes—born from the pores of His skin—live for the span of one of His exhalations."
+    </p>
+  </div>
+
+  <!-- The Sacred Icon -->
+  <div class="hero-icon" id="heroIcon" aria-label="Govinda — the Primeval Lord — in yoga-nidrā">
+    <div class="hero-icon-halo" aria-hidden="true"></div>
+
+    <svg class="hero-icon-ring" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+      <circle cx="200" cy="200" r="198" fill="none" stroke="#D4A04C" stroke-width="0.4" opacity="0.4"/>
+      <circle cx="200" cy="200" r="192" fill="none" stroke="#D4A04C" stroke-width="0.3" opacity="0.25"/>
+      <g stroke="#D4A04C" stroke-width="0.5" opacity="0.7">
+        <g transform="translate(200 200)">
+          <line x1="0" y1="-198" x2="0" y2="-186"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(30)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(60)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(90)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(120)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(150)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(180)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(210)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(240)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(270)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(300)"/>
+          <line x1="0" y1="-198" x2="0" y2="-186" transform="rotate(330)"/>
+        </g>
+        <g transform="translate(200 200)" opacity="0.9">
+          <circle cx="0" cy="-198" r="2.2" fill="#D4A04C" stroke="none"/>
+          <circle cx="198" cy="0" r="2.2" fill="#D4A04C" stroke="none"/>
+          <circle cx="0" cy="198" r="2.2" fill="#D4A04C" stroke="none"/>
+          <circle cx="-198" cy="0" r="2.2" fill="#D4A04C" stroke="none"/>
+        </g>
+      </g>
+    </svg>
+
+    <svg class="hero-icon-ring-2" viewBox="0 0 400 400" fill="none" aria-hidden="true">
+      <circle cx="200" cy="200" r="198" fill="none" stroke="#D4A04C" stroke-width="0.3" opacity="0.5"
+              stroke-dasharray="2 8"/>
+    </svg>
+
+    <div class="hero-icon-frame">
+      <img src="krishna-yoga-nidra.png"
+           alt="Govinda — the Primeval Lord — in yoga-nidrā, crowned with peacock feather"
+           loading="eager" decoding="async" fetchpriority="high"/>
+    </div>
+
+    <span class="hero-icon-cap">Govinda · Ādi-Puruṣa</span>
+  </div>
+
+  <div class="hero-inner" style="max-width:1000px;">
+    <h1 class="hero-title scatter" id="heroTitle">
+      <span class="line"><span class="cascade-line"></span></span>
+      <span class="line"><span class="cascade-line"></span></span>
+    </h1>
+
+    <p class="hero-sub" data-reveal="d4">
+      The Vaiṣṇava cosmological vision—rendered in light, drift, and the slow rhythm of the Causal Ocean.
+    </p>
+
+    <div class="hero-actions" data-reveal="d4">
+      <a href="#ocean" class="btn" data-magnetic>
+        Enter the ocean
+        <svg class="btn-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none">
+          <path d="M10 1L15 6L10 11M15 6H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      <a href="#scripture" class="btn btn-ghost" data-magnetic>Read the verses</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll-hint">Descend · Continue</div>
+</header>
+
+
+<!-- ================================================
+     ACT 2 · THE CAUSAL OCEAN
+     ================================================ -->
+<section class="section" id="ocean">
+  <div class="wrap">
+    <div class="intrigue-grid">
+      <div class="intrigue-side">
+        <span class="eyebrow" data-reveal>§01 · The Causal Ocean</span>
+
+        <h2 class="head-display" data-reveal="d1">
+          He reclines<br>upon the <em>kāraṇa-udaka</em><br>—the water of all causes.
+        </h2>
+
+        <div class="intrigue-deva" data-reveal="d2">कारणोदकशायी विष्णु</div>
+        <div class="intrigue-translit" data-reveal="d2">Kāraṇodaka-śāyī Viṣṇu</div>
+
+        <div class="intrigue-body" data-reveal="d3">
+          <p>
+            Beyond the threshold of every created world lies the <span class="term">Kāraṇa-arṇava</span>—the
+            ocean of causality. Within its limitless waters reclines <span class="term">Mahā-Viṣṇu</span>,
+            the first <span class="term">puruṣa-avatāra</span>, eyes half-closed in <span class="term">yoga-nidrā</span>,
+            the mystic slumber that is not sleep.
+          </p>
+          <p>
+            With each exhalation, innumerable seed-universes—<span class="term">brahmāṇḍa</span>, "cosmic
+            eggs"—issue from the pores of His skin like luminous bubbles rising through dark water.
+            With each inhalation, they return into Him. The cycle is silent, vast, and total.
+          </p>
+          <p>
+            Every universe you can imagine is one such bubble. Every Brahmā, every star-system, every
+            history you have ever heard or lived takes place inside the surface tension of a single
+            sphere drifting from a single pore.
+          </p>
+        </div>
+      </div>
+
+      <div class="form-panel" data-reveal="d2">
+        <div class="form-panel-frame">
+          <span class="form-panel-corner tl"></span>
+          <span class="form-panel-corner tr"></span>
+          <span class="form-panel-corner bl"></span>
+          <span class="form-panel-corner br"></span>
+        </div>
+
+        <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" id="emanationSvg" style="margin-bottom:30px;">
+          <defs>
+            <radialGradient id="srcGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%"  stop-color="#D4A04C" stop-opacity="0.55"/>
+              <stop offset="60%" stop-color="#4A6FB5" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#4A6FB5" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="bubGrad" cx="35%" cy="35%" r="65%">
+              <stop offset="0%"  stop-color="#F2EDDE" stop-opacity="0.5"/>
+              <stop offset="40%" stop-color="#D4A04C" stop-opacity="0.20"/>
+              <stop offset="100%" stop-color="#4A6FB5" stop-opacity="0.06"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Glowing source -->
+          <circle cx="200" cy="380" r="120" fill="url(#srcGlow)" class="fade-in"/>
+          <circle cx="200" cy="380" r="6" fill="#D4A04C" class="fade-in"/>
+
+          <!-- Drawing arcs from source to bubbles -->
+          <g stroke="#D4A04C" stroke-width="0.6" fill="none" opacity="0.45">
+            <path class="draw-path" style="--len:200" d="M 200 380 Q 190 350 180 320"/>
+            <path class="draw-path" style="--len:200" d="M 200 380 Q 220 340 240 290"/>
+            <path class="draw-path" style="--len:280" d="M 200 380 Q 175 320 150 240"/>
+            <path class="draw-path" style="--len:280" d="M 200 380 Q 235 300 270 210"/>
+            <path class="draw-path" style="--len:340" d="M 200 380 Q 198 280 195 170"/>
+            <path class="draw-path" style="--len:380" d="M 200 380 Q 160 250 120 130"/>
+            <path class="draw-path" style="--len:380" d="M 200 380 Q 250 250 300 120"/>
+            <path class="draw-path" style="--len:420" d="M 200 380 Q 215 230 225 80"/>
+          </g>
+
+          <!-- Rising bubbles -->
+          <g class="fade-in">
+            <circle cx="180" cy="320" r="14" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.55"/>
+            <circle cx="240" cy="290" r="18" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.55"/>
+            <circle cx="150" cy="240" r="22" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.55"/>
+            <circle cx="270" cy="210" r="16" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.55"/>
+            <circle cx="195" cy="170" r="26" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.55"/>
+            <circle cx="120" cy="130" r="13" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.45"/>
+            <circle cx="300" cy="120" r="15" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.45"/>
+            <circle cx="225" cy="80"  r="20" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.45"/>
+            <circle cx="80"  cy="80"  r="11" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.38"/>
+            <circle cx="335" cy="180" r="10" fill="url(#bubGrad)" stroke="#D4A04C" stroke-width="0.6" stroke-opacity="0.38"/>
+          </g>
+
+          <!-- Causal ocean ripples (drawn last, animate first) -->
+          <g stroke="#4A6FB5" stroke-width="0.6" opacity="0.35" fill="none">
+            <path class="draw-path" style="--len:380" d="M 30 430 Q 200 425 370 430"/>
+            <path class="draw-path" style="--len:380" d="M 50 450 Q 200 444 350 450"/>
+            <path class="draw-path" style="--len:380" d="M 40 470 Q 200 462 360 470"/>
+          </g>
+        </svg>
+        <div class="form-panel-label">Pore · Bubble · Universe</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     ACT 3 · THE BREATH (interactive)
+     ================================================ -->
+<section class="section" id="breath">
+  <div class="wrap">
+    <div class="proof-intro">
+      <span class="eyebrow" data-reveal>§02 · The Time of One Breath</span>
+      <h2 class="head-display" data-reveal="d1" style="margin-top:30px; margin-bottom:24px;">
+        Numbers <em>that break the mind</em>—precisely as intended.
+      </h2>
+      <p class="lede" data-reveal="d2" style="margin:0 auto;">
+        Sanātana cosmology is not vague mysticism. It is a precise calendar of time-scales
+        in which a single exhalation of Mahā-Viṣṇu contains the entire life-cycle of every
+        Brahmā in every universe.
+      </p>
+    </div>
+
+    <div class="metrics" data-reveal="d2">
+      <div class="metric">
+        <div class="metric-label">One Brahmā's day</div>
+        <div class="metric-num">4.32<small>BN YRS</small></div>
+        <p class="metric-desc">A <em>kalpa</em>—1,000 cycles of four <em>yugas</em>. The day of the demiurge of a single universe.</p>
+      </div>
+      <div class="metric">
+        <div class="metric-label">One Brahmā's life</div>
+        <div class="metric-num">311<small>TR YRS</small></div>
+        <p class="metric-desc">A century of Brahmā's days and nights. Approximately 311 trillion human years.</p>
+      </div>
+      <div class="metric">
+        <div class="metric-label">Mahā-Viṣṇu's exhalation</div>
+        <div class="metric-num">∞<small>BREATHS</small></div>
+        <p class="metric-desc">One full life of Brahmā equals <em>one breath</em>. And the breaths are without count.</p>
+      </div>
+    </div>
+
+    <!-- The Breath Panel — interactive cosmic-time calculator -->
+    <div class="breath-panel" data-reveal>
+      <div class="breath-panel-grid">
+
+        <div class="breath-panel-controls">
+          <span class="eyebrow">Interactive · Cosmic Calculator</span>
+          <h3>Set the position within <em>one breath</em>.</h3>
+          <p>
+            Drag to a point in Brahmā's life. Read what that moment equals in
+            human reckoning, in mahā-yugas, in the kalpa cycle, and as a fraction
+            of a single inhalation of Mahā-Viṣṇu.
+          </p>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Brahmā's age</span>
+              <span class="slider-label-val" id="ageVal">50.0 years</span>
+            </div>
+            <input id="ageSlider" type="range" min="0" max="1000" value="500" class="cosmic" />
+          </div>
+
+          <div class="slider-row">
+            <div class="slider-label">
+              <span>Brahmāṇḍa density</span>
+              <span class="slider-label-val" id="densityVal">moderate</span>
+            </div>
+            <input id="densitySlider" type="range" min="10" max="200" value="80" class="cosmic" />
+          </div>
+
+          <div class="breath-readout">
+            <div class="readout-cell">
+              <div class="readout-cell-label">in human years</div>
+              <div class="readout-cell-val" id="humanYears">—</div>
+            </div>
+            <div class="readout-cell">
+              <div class="readout-cell-label">kalpas elapsed</div>
+              <div class="readout-cell-val" id="kalpasVal">—</div>
+            </div>
+            <div class="readout-cell">
+              <div class="readout-cell-label">mahā-yugas</div>
+              <div class="readout-cell-val" id="mahaYugas">—</div>
+            </div>
+            <div class="readout-cell">
+              <div class="readout-cell-label">of one exhalation</div>
+              <div class="readout-cell-val" id="breathFrac">—</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="breath-stage" data-reveal="d2">
+          <div class="breath-stage-info">
+            <span>Brahmāṇḍa · Live</span>
+            <span id="bubbleCount">— bubbles</span>
+          </div>
+          <canvas class="breath-canvas" id="breathCanvas"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="ornament" style="margin-top:var(--space-block);">
+      <span class="ornament-line"></span>
+      <svg class="ornament-mark" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="0.6" opacity="0.6"/>
+        <circle cx="12" cy="12" r="5"  stroke="currentColor" stroke-width="0.6" opacity="0.8"/>
+        <circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+      </svg>
+      <span class="ornament-line"></span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     ACT 4 · THE THREE VIṢṆUS
+     ================================================ -->
+<section class="section" id="trinity">
+  <div class="wrap">
+    <div class="three-intro">
+      <div>
+        <span class="eyebrow" data-reveal>§03 · Triple Form</span>
+      </div>
+      <div>
+        <h2 class="head-display" data-reveal="d1">
+          The <em>three Viṣṇus</em>—one Lord, three descents into the causal,
+          gestational, and present realms.
+        </h2>
+      </div>
+    </div>
+
+    <div class="three-grid">
+      <article class="vishnu-card track-cursor" data-reveal="d1">
+        <div class="vishnu-card-num">I · The Causal Form</div>
+        <svg class="vishnu-card-icon" viewBox="0 0 48 48" fill="none">
+          <ellipse cx="24" cy="32" rx="18" ry="4" stroke="currentColor" stroke-width="0.8" opacity="0.6"/>
+          <ellipse cx="24" cy="32" rx="12" ry="2.5" stroke="currentColor" stroke-width="0.8" opacity="0.8"/>
+          <circle cx="24" cy="20" r="3" fill="currentColor" opacity="0.9"/>
+          <circle cx="14" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="0.6"/>
+          <circle cx="34" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="0.6"/>
+          <circle cx="24" cy="6"  r="2" fill="none" stroke="currentColor" stroke-width="0.6"/>
+        </svg>
+        <div class="vishnu-card-deva">कारणोदकशायी</div>
+        <div class="vishnu-card-name">Kāraṇodakaśāyī</div>
+        <div class="vishnu-card-role">Mahā-Viṣṇu · Causal Ocean</div>
+        <p class="vishnu-card-body">
+          The first <em>puruṣa-avatāra</em>. He reclines beyond the boundary of every universe in the
+          ocean of all causes. From the pores of His body emerge the seed-universes themselves, each
+          floating as a luminous bubble in the dark waters.
+        </p>
+      </article>
+
+      <article class="vishnu-card track-cursor" data-reveal="d2">
+        <div class="vishnu-card-num">II · The Gestational Form</div>
+        <svg class="vishnu-card-icon" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+          <circle cx="24" cy="24" r="14" stroke="currentColor" stroke-width="0.7" opacity="0.6"/>
+          <ellipse cx="24" cy="30" rx="10" ry="2" stroke="currentColor" stroke-width="0.7" opacity="0.85"/>
+          <circle cx="24" cy="22" r="2.5" fill="currentColor"/>
+          <path d="M 24 22 Q 22 14 24 6" stroke="currentColor" stroke-width="0.6" fill="none" opacity="0.6"/>
+          <circle cx="24" cy="6" r="2" fill="currentColor" opacity="0.8"/>
+        </svg>
+        <div class="vishnu-card-deva">गर्भोदकशायी</div>
+        <div class="vishnu-card-name">Garbhodakaśāyī</div>
+        <div class="vishnu-card-role">Within each universe</div>
+        <p class="vishnu-card-body">
+          The second <em>puruṣa-avatāra</em>. Mahā-Viṣṇu enters each bubble-universe and reclines on
+          the gestational waters within. From His navel sprouts the lotus on which Brahmā—the
+          architect of <em>that</em> universe—is born to begin the work of creation.
+        </p>
+      </article>
+
+      <article class="vishnu-card track-cursor" data-reveal="d3">
+        <div class="vishnu-card-num">III · The Indwelling Form</div>
+        <svg class="vishnu-card-icon" viewBox="0 0 48 48" fill="none">
+          <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="0.4" opacity="0.3"/>
+          <circle cx="24" cy="24" r="6" fill="currentColor" opacity="0.9"/>
+          <g stroke="currentColor" stroke-width="0.5" opacity="0.6">
+            <line x1="24" y1="4"  x2="24" y2="14"/>
+            <line x1="24" y1="34" x2="24" y2="44"/>
+            <line x1="4"  y1="24" x2="14" y2="24"/>
+            <line x1="34" y1="24" x2="44" y2="24"/>
+            <line x1="10" y1="10" x2="17" y2="17"/>
+            <line x1="38" y1="10" x2="31" y2="17"/>
+            <line x1="10" y1="38" x2="17" y2="31"/>
+            <line x1="38" y1="38" x2="31" y2="31"/>
+          </g>
+        </svg>
+        <div class="vishnu-card-deva">क्षीरोदकशायी</div>
+        <div class="vishnu-card-name">Kṣīrodakaśāyī</div>
+        <div class="vishnu-card-role">Within every heart</div>
+        <p class="vishnu-card-body">
+          The third <em>puruṣa-avatāra</em>—the <em>Paramātmā</em>. He resides on the ocean of milk
+          and, more intimately, in the heart of every living being as the silent witness. The same
+          Lord, contracted to the size of a thumb, dwelling within.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     ACT 5 · THE BUBBLE FIELD
+     ================================================ -->
+<section class="field section" id="field">
+  <div class="wrap">
+    <div class="field-intro">
+      <span class="eyebrow" data-reveal>§04 · Drift</span>
+      <h2 class="head-display" data-reveal="d1" style="margin-top:30px; margin-bottom:24px;">
+        Each bubble<br>contains <em>everything you know</em>.
+      </h2>
+      <p class="lede" data-reveal="d2" style="margin:0 auto;">
+        Hover the field. Each sphere is a brahmāṇḍa—a complete cosmic egg with its
+        own Brahmā, its own time, its own gods, its own histories.
+      </p>
+    </div>
+
+    <div class="field-stage cursor-fine" data-reveal="d2" id="fieldStage">
+      <canvas class="field-canvas" id="fieldCanvas"></canvas>
+      <div class="field-source"></div>
+      <div class="field-info">
+        <span class="field-info-label">Brahmāṇḍa · Field View</span>
+        <span class="field-info-hint">hover any bubble</span>
+      </div>
+      <div class="field-readout" id="fieldReadout">
+        <div class="field-readout-title" id="fieldReadoutTitle">—</div>
+        <div class="field-readout-meta" id="fieldReadoutMeta">—</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     ACT 6 · SCRIPTURE
+     ================================================ -->
+<section class="section" id="scripture">
+  <div class="wrap">
+    <div style="text-align:center; max-width:62ch; margin:0 auto var(--space-block);">
+      <span class="eyebrow" data-reveal>§05 · Primary Sources</span>
+      <h2 class="head-display" data-reveal="d1" style="margin-top:30px;">
+        The <em>śāstric</em> foundation—<br>verse by verse.
+      </h2>
+    </div>
+
+    <div class="scripture-grid">
+      <article class="scripture-card" data-reveal>
+        <span class="scripture-card-tag">Brahma Saṁhitā · 5.48</span>
+        <p class="scripture-deva">
+          यस्यैकनिश्वसितकालमथावलम्ब्य<br>
+          जीवन्ति लोमविलजा जगदण्डनाथाः ।<br>
+          विष्णुर्महान् स इह यस्य कलाविशेषो<br>
+          गोविन्दमादिपुरुषं तमहं भजामि ॥
+        </p>
+        <p class="scripture-translit">
+          yasyaika-niśvasita-kālam athāvalambya<br>
+          jīvanti loma-vila-jā jagad-aṇḍa-nāthāḥ /<br>
+          viṣṇur mahān sa iha yasya kalā-viśeṣo<br>
+          govindam ādi-puruṣaṁ tam ahaṁ bhajāmi //
+        </p>
+        <p class="scripture-translation">
+          "I worship <strong>Govinda</strong>, the primeval Lord, of whom <strong>Mahā-Viṣṇu</strong>
+          is a portion of a plenary portion. The lords of innumerable universes—born from the pores
+          of His skin—live for the duration of one of His exhalations."
+        </p>
+        <p class="scripture-attrib">The classical Vaiṣṇava locus on bubble-universe emanation.</p>
+      </article>
+
+      <article class="scripture-card" data-reveal="d1">
+        <span class="scripture-card-tag">Brahma Saṁhitā · 5.47</span>
+        <p class="scripture-deva">
+          यः कारणार्णवजले भजति स्म योगनिद्राम्<br>
+          अनन्तजगदण्डसरोमकूपः ।<br>
+          आधारशक्तिमवलम्ब्य परां स्वमूर्तिं<br>
+          गोविन्दमादिपुरुषं तमहं भजामि ॥
+        </p>
+        <p class="scripture-translit">
+          yaḥ kāraṇārṇava-jale bhajati sma yoga-<br>
+          nidrām ananta-jagad-aṇḍa-sa-roma-kūpaḥ /<br>
+          ādhāra-śaktim avalambya parāṁ sva-mūrtiṁ<br>
+          govindam ādi-puruṣaṁ tam ahaṁ bhajāmi //
+        </p>
+        <p class="scripture-translation">
+          "I worship <strong>Govinda</strong>, in whose pores reside the innumerable cosmic eggs,
+          and who—taking shelter of His own supreme <em>ādhāra-śakti</em>—rests in
+          <em>yoga-nidrā</em> upon the waters of the Causal Ocean."
+        </p>
+        <p class="scripture-attrib">The verse that immediately precedes 5.48—setting the scene of the recline.</p>
+      </article>
+
+      <article class="scripture-card" data-reveal>
+        <span class="scripture-card-tag">Bhagavad Gītā · 11.7</span>
+        <p class="scripture-deva">
+          इहैकस्थं जगत्कृत्स्नं पश्याद्य सचराचरम् ।<br>
+          मम देहे गुडाकेश यच्चान्यद् द्रष्टुमिच्छसि ॥
+        </p>
+        <p class="scripture-translit">
+          ihaika-sthaṁ jagat kṛtsnaṁ paśyādya sa-carācaram /<br>
+          mama dehe guḍākeśa yac cānyad draṣṭum icchasi //
+        </p>
+        <p class="scripture-translation">
+          "Behold now, O Arjuna, the entire universe—moving and unmoving—and whatever else you wish
+          to see, all <strong>assembled in this one place</strong>, within My body."
+        </p>
+        <p class="scripture-attrib">The Viśva-rūpa: every cosmos contained within the Lord's form.</p>
+      </article>
+
+      <article class="scripture-card" data-reveal="d1">
+        <span class="scripture-card-tag">Śrīmad Bhāgavatam · 2.5.33</span>
+        <p class="scripture-deva">
+          सोऽन्तः शरीरेऽर्पितभूतसूक्ष्मः<br>
+          कालात्मिकां शक्तिमुदीरयाणः ।<br>
+          उवास तस्मिन् सलिले पदे स्वे<br>
+          यथानलो दारुणि रुद्धवीर्यः ॥
+        </p>
+        <p class="scripture-translit">
+          so 'ntaḥ śarīre 'rpita-bhūta-sūkṣmaḥ<br>
+          kālātmikāṁ śaktim udīrayāṇaḥ /<br>
+          uvāsa tasmin salile pade sve<br>
+          yathānalo dāruṇi ruddha-vīryaḥ //
+        </p>
+        <p class="scripture-translation">
+          "Having placed the subtle elements within His body, energising the power that is the
+          essence of <strong>time</strong>, He lay upon the waters in His own abode—like fire latent
+          within wood."
+        </p>
+        <p class="scripture-attrib">The Bhāgavatam's parallel description of the recline—and time as His energy.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     ACT 7 · MODERN ECHO
+     ================================================ -->
+<section class="section" id="echo-section">
+  <div class="wrap">
+    <div style="text-align:center; max-width:60ch; margin:0 auto var(--space-block);">
+      <span class="eyebrow" data-reveal>§06 · The Echo</span>
+      <h2 class="head-display" data-reveal="d1" style="margin-top:30px;">
+        What modern cosmology stumbled toward<br>was <em>already written</em>.
+      </h2>
+    </div>
+  </div>
+
+  <div class="echo">
+    <div class="echo-col">
+      <h3>The <em>contemporary</em> picture.</h3>
+      <p>
+        Twentieth-century cosmology, working forward from general relativity and quantum field
+        theory, eventually arrived at frameworks where our universe is not unique.
+      </p>
+      <p>
+        Eternal inflation predicts that inflationary "bubble universes" are continually nucleating
+        from a metastable false vacuum. The string-theory landscape suggests on the order of
+        10⁵⁰⁰ possible vacuum configurations. Many-worlds interpretations posit branching realities
+        at every quantum event.
+      </p>
+
+      <div class="echo-row">
+        <div class="echo-row-key">Mechanism</div>
+        <div class="echo-row-val">False-vacuum nucleation</div>
+      </div>
+      <div class="echo-row">
+        <div class="echo-row-key">Substrate</div>
+        <div class="echo-row-val">Inflating background field</div>
+      </div>
+      <div class="echo-row">
+        <div class="echo-row-key">Population</div>
+        <div class="echo-row-val">Infinite, non-interacting</div>
+      </div>
+      <div class="echo-row">
+        <div class="echo-row-key">Time</div>
+        <div class="echo-row-val">No global "now"</div>
+      </div>
+    </div>
+
+    <div class="echo-col">
+      <h3>The <em>sanātana</em> picture.</h3>
+      <p>
+        The Vaiṣṇava tradition has described this configuration for at least a millennium—and likely
+        much longer—with a precision and a vocabulary that no naturalistic account can yet match.
+      </p>
+      <p>
+        The substrate is the Causal Ocean. The mechanism is the breath of the puruṣa-avatāra. The
+        bubbles are <em>brahmāṇḍa</em>—cosmic eggs with internal time, internal demiurges, and
+        internal histories. The population is innumerable but not random: each is held in conscious
+        relation to its source.
+      </p>
+
+      <div class="echo-row">
+        <div class="echo-row-key">Mechanism</div>
+        <div class="echo-row-val">Niśvāsa — divine respiration</div>
+      </div>
+      <div class="echo-row">
+        <div class="echo-row-key">Substrate</div>
+        <div class="echo-row-val">Kāraṇa-arṇava — causal ocean</div>
+      </div>
+      <div class="echo-row">
+        <div class="echo-row-key">Population</div>
+        <div class="echo-row-val">Ananta — without end</div>
+      </div>
+      <div class="echo-row">
+        <div class="echo-row-key">Time</div>
+        <div class="echo-row-val">Local to each brahmāṇḍa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================
+     ACT 8 · INVITATION
+     ================================================ -->
+<section class="invitation" id="invitation">
+  <div class="wrap">
+    <svg class="invitation-mark" viewBox="0 0 64 64" fill="none">
+      <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="0.6" opacity="0.4"/>
+      <circle cx="32" cy="32" r="20" stroke="currentColor" stroke-width="0.6" opacity="0.55"/>
+      <circle cx="32" cy="32" r="10" stroke="currentColor" stroke-width="0.6" opacity="0.7"/>
+      <circle cx="32" cy="32" r="2.5" fill="currentColor"/>
+      <g stroke="currentColor" stroke-width="0.5" opacity="0.5">
+        <line x1="32" y1="2"  x2="32" y2="62"/>
+        <line x1="2"  y1="32" x2="62" y2="32"/>
+      </g>
+    </svg>
+
+    <div class="invitation-deva" data-reveal>हरिः ॐ तत्सत्</div>
+
+    <h2 class="invitation-title" data-reveal="d1">
+      Sit a moment longer<br>with the <em>breathing</em>.
+    </h2>
+
+    <p class="invitation-sub" data-reveal="d2">
+      The Vaiṣṇava cosmology is not a metaphor we have outgrown. It is a complete description—
+      precise, beautiful, and waiting to be read in its own language.
+    </p>
+
+    <a href="#top" class="btn" data-magnetic data-reveal="d3">
+      Return to the source
+      <svg class="btn-arrow" width="16" height="12" viewBox="0 0 16 12" fill="none">
+        <path d="M10 1L15 6L10 11M15 6H1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+  </div>
+</section>
+
+
+<!-- ================================================
+     FOOTER
+     ================================================ -->
+<footer class="foot">
+  <div class="foot-left">Compiled with reverence · Just Namish</div>
+  <div class="foot-mark">ॐ नमो भगवते वासुदेवाय</div>
+  <div class="foot-right">Primary sources: Brahma Saṁhitā · Bhāgavatam · Gītā</div>
+</footer>
+
+
+<script>
+const REDUCE = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============================================================
+   1. AMBIENT COSMOS CANVAS — full-page drifting bubbles
+   ============================================================ */
+(function ambientCosmos(){
+  const cvs = document.getElementById('cosmos-canvas');
+  const ctx = cvs.getContext('2d');
+  let W=0, H=0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let bubbles = [];
+  const isMobile = window.innerWidth < 760;
+  const COUNT = isMobile ? 26 : 56;
+
+  const TINTS = [
+    [212,160,76],
+    [199,122,43],
+    [74,111,181],
+    [232,154,143],
+    [242,237,222],
+  ];
+
+  function resize(){
+    W = window.innerWidth; H = window.innerHeight;
+    cvs.width = W * dpr; cvs.height = H * dpr;
+    cvs.style.width = W+'px'; cvs.style.height = H+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  resize();
+  window.addEventListener('resize', () => { resize(); spawn(); });
+
+  function makeBubble(initial=false){
+    const r = 6 + Math.pow(Math.random(), 1.6) * (isMobile ? 50 : 90);
+    return {
+      x: Math.random() * W,
+      y: initial ? Math.random() * H : H + r + Math.random()*200,
+      r,
+      vy: -(0.06 + Math.random()*0.22) * (r < 30 ? 1.4 : 0.7),
+      vx: (Math.random() - 0.5) * 0.10,
+      drift: Math.random() * Math.PI * 2,
+      driftSpeed: 0.0008 + Math.random() * 0.0014,
+      tint: TINTS[Math.floor(Math.random() * TINTS.length)],
+      alpha: 0.28 + Math.random() * 0.5,
+      pulse: Math.random() * Math.PI * 2,
+      pulseSpeed: 0.003 + Math.random() * 0.005,
+    };
+  }
+  function spawn(){
+    bubbles = [];
+    for (let i=0; i<COUNT; i++) bubbles.push(makeBubble(true));
+  }
+  spawn();
+
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+    for (let i=0; i<bubbles.length; i++){
+      const b = bubbles[i];
+      b.y += b.vy;
+      b.drift += b.driftSpeed;
+      b.x += b.vx + Math.sin(b.drift) * 0.15;
+      b.pulse += b.pulseSpeed;
+
+      if (b.y + b.r < -20){
+        bubbles[i] = makeBubble(false);
+        continue;
+      }
+
+      const t = b.tint;
+      const pulse = 0.85 + Math.sin(b.pulse) * 0.15;
+      const a = b.alpha * pulse;
+
+      const grad = ctx.createRadialGradient(
+        b.x - b.r*0.3, b.y - b.r*0.3, b.r*0.1,
+        b.x, b.y, b.r
+      );
+      grad.addColorStop(0,   `rgba(${t[0]},${t[1]},${t[2]},${a*0.35})`);
+      grad.addColorStop(0.55,`rgba(${t[0]},${t[1]},${t[2]},${a*0.10})`);
+      grad.addColorStop(1,   `rgba(${t[0]},${t[1]},${t[2]},0)`);
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, Math.PI*2); ctx.fill();
+
+      ctx.strokeStyle = `rgba(${t[0]},${t[1]},${t[2]},${a*0.45})`;
+      ctx.lineWidth = 0.6;
+      ctx.beginPath(); ctx.arc(b.x, b.y, b.r * 0.95, 0, Math.PI*2); ctx.stroke();
+
+      if (b.r > 16){
+        ctx.fillStyle = `rgba(242,237,222,${a*0.35})`;
+        ctx.beginPath(); ctx.arc(b.x - b.r*0.32, b.y - b.r*0.32, b.r*0.16, 0, Math.PI*2); ctx.fill();
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  if (!REDUCE) tick();
+  else {
+    bubbles.forEach(b => {
+      const t = b.tint;
+      ctx.fillStyle = `rgba(${t[0]},${t[1]},${t[2]},${b.alpha*0.2})`;
+      ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, Math.PI*2); ctx.fill();
+    });
+  }
+})();
+
+
+/* ============================================================
+   2. KĀLA-CAKRA SCROLL PROGRESS RING + NAV
+   ============================================================ */
+(function scrollProgress(){
+  const fill = document.getElementById('cakraFill');
+  const nav = document.getElementById('nav');
+  const railItems = document.querySelectorAll('.rail-item');
+  const CIRC = 157; // 2 * π * 25
+
+  const sections = Array.from(railItems).map(item => {
+    const target = item.getAttribute('data-target');
+    return { item, el: document.querySelector(target) };
+  }).filter(s => s.el);
+
+  let ticking = false;
+  function update(){
+    const y = window.scrollY;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = Math.max(0, Math.min(1, y / max));
+    fill.style.strokeDashoffset = CIRC * (1 - pct);
+
+    nav.classList.toggle('scrolled', y > 60);
+
+    // rail active state
+    const mid = y + window.innerHeight * 0.4;
+    let activeIdx = 0;
+    sections.forEach((s, i) => {
+      if (s.el.offsetTop <= mid) activeIdx = i;
+    });
+    railItems.forEach((it, i) => it.classList.toggle('active', i === activeIdx));
+
+    ticking = false;
+  }
+  window.addEventListener('scroll', () => {
+    if (!ticking){ requestAnimationFrame(update); ticking = true; }
+  }, {passive:true});
+  update();
+
+  railItems.forEach(item => {
+    item.addEventListener('click', e => {
+      e.preventDefault();
+      const target = document.querySelector(item.getAttribute('data-target'));
+      if (target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+})();
+
+
+/* ============================================================
+   3. CHARACTER CASCADE — Devanagari verse + headline
+   ============================================================ */
+(function cascade(){
+  // The hero verse cascade — split by grapheme (handles Devanagari matras correctly)
+  const verse = document.getElementById('heroVerse');
+  if (verse){
+    const text = verse.textContent;
+    verse.textContent = '';
+    let chars;
+    if (typeof Intl !== 'undefined' && Intl.Segmenter){
+      const seg = new Intl.Segmenter('hi', {granularity:'grapheme'});
+      chars = Array.from(seg.segment(text), s => s.segment);
+    } else {
+      chars = Array.from(text);
+    }
+    chars.forEach(c => {
+      const span = document.createElement('span');
+      if (c === ' '){
+        span.className = 'ws';
+      } else {
+        span.className = 'char';
+        span.textContent = c;
+      }
+      verse.appendChild(span);
+    });
+  }
+
+  // The headline — assemble line by line with cascade chars
+  const heroTitle = document.getElementById('heroTitle');
+  if (heroTitle){
+    const lines = [
+      { plain: 'A single breath.', accent: null },
+      { plain: '', accent: 'Countless', tail: ' universes.' }
+    ];
+    const lineEls = heroTitle.querySelectorAll('.cascade-line');
+
+    lines.forEach((line, idx) => {
+      const wrap = lineEls[idx];
+      wrap.classList.add('cascade');
+      if (line.accent){
+        // mixed: regular + emphasized + tail
+        const before = '';
+        const accent = document.createElement('em');
+        const accentChars = Array.from(line.accent);
+        accentChars.forEach(c => {
+          const s = document.createElement('span');
+          if (c === ' '){ s.className = 'ws'; } else { s.className='char'; s.textContent = c; }
+          accent.appendChild(s);
+        });
+        wrap.appendChild(accent);
+
+        Array.from(line.tail).forEach(c => {
+          const s = document.createElement('span');
+          if (c === ' '){ s.className = 'ws'; } else { s.className='char'; s.textContent = c; }
+          wrap.appendChild(s);
+        });
+      } else {
+        Array.from(line.plain).forEach(c => {
+          const s = document.createElement('span');
+          if (c === ' '){ s.className = 'ws'; } else { s.className='char'; s.textContent = c; }
+          wrap.appendChild(s);
+        });
+      }
+    });
+  }
+
+  // Reveal cascades when in view, with staggered delays
+  const triggers = document.querySelectorAll('.cascade, .cascade-line');
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const chars = en.target.querySelectorAll('.char');
+        chars.forEach((c, i) => {
+          setTimeout(() => c.classList.add('in'), i * 22);
+        });
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.2 });
+    triggers.forEach(t => io.observe(t));
+  } else {
+    triggers.forEach(t => t.querySelectorAll('.char').forEach(c => c.classList.add('in')));
+  }
+
+  // Scatter on hover for the headline
+  const scatter = document.querySelector('.scatter');
+  if (scatter && !REDUCE){
+    scatter.addEventListener('pointermove', (e) => {
+      const rect = scatter.getBoundingClientRect();
+      const mx = e.clientX, my = e.clientY;
+      scatter.querySelectorAll('.char').forEach(c => {
+        const r = c.getBoundingClientRect();
+        const cx = r.left + r.width/2;
+        const cy = r.top  + r.height/2;
+        const dx = cx - mx, dy = cy - my;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        const force = Math.max(0, 1 - dist/180);
+        const tx = (dx / (dist || 1)) * force * 14;
+        const ty = (dy / (dist || 1)) * force * 14;
+        c.style.transform = `translate(${tx}px, ${ty}px)`;
+      });
+    });
+    scatter.addEventListener('pointerleave', () => {
+      scatter.querySelectorAll('.char').forEach(c => c.style.transform = '');
+    });
+  }
+})();
+
+
+/* ============================================================
+   4. MAGNETIC BUTTONS
+   ============================================================ */
+(function magnetic(){
+  if (REDUCE) return;
+  document.querySelectorAll('[data-magnetic]').forEach(btn => {
+    let raf;
+    btn.addEventListener('pointermove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const mx = e.clientX - r.left;
+      const my = e.clientY - r.top;
+      const cx = r.width / 2, cy = r.height / 2;
+      const dx = (mx - cx) * 0.25;
+      const dy = (my - cy) * 0.35;
+      btn.style.setProperty('--mx', ((mx/r.width)*100) + '%');
+      btn.style.setProperty('--my', ((my/r.height)*100) + '%');
+      if (raf) cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(() => {
+        btn.style.transform = `translate(${dx}px, ${dy}px)`;
+      });
+    });
+    btn.addEventListener('pointerleave', () => {
+      if (raf) cancelAnimationFrame(raf);
+      btn.style.transform = '';
+    });
+  });
+})();
+
+
+/* ============================================================
+   5. SCROLL REVEAL
+   ============================================================ */
+(function reveal(){
+  if (!('IntersectionObserver' in window)){
+    document.querySelectorAll('[data-reveal]').forEach(e => e.classList.add('in'));
+    return;
+  }
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting){
+        en.target.classList.add('in');
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+  document.querySelectorAll('[data-reveal]').forEach(e => io.observe(e));
+})();
+
+
+/* ============================================================
+   6. EMANATION SVG — draw on scroll
+   ============================================================ */
+(function emanationDraw(){
+  const svg = document.getElementById('emanationSvg');
+  if (!svg) return;
+  const paths = svg.querySelectorAll('.draw-path');
+  const fades = svg.querySelectorAll('.fade-in');
+
+  if (!('IntersectionObserver' in window)){
+    paths.forEach(p => p.classList.add('in'));
+    fades.forEach(f => f.classList.add('in'));
+    return;
+  }
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting){
+        paths.forEach((p, i) => {
+          setTimeout(() => p.classList.add('in'), i * 120);
+        });
+        fades.forEach(f => f.classList.add('in'));
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  io.observe(svg);
+})();
+
+
+/* ============================================================
+   7. THREE-VIṢṆUS CARDS — cursor-following gradient
+   ============================================================ */
+(function trackCursor(){
+  document.querySelectorAll('.track-cursor').forEach(card => {
+    card.addEventListener('pointermove', (e) => {
+      const r = card.getBoundingClientRect();
+      const x = ((e.clientX - r.left) / r.width) * 100;
+      const y = ((e.clientY - r.top)  / r.height) * 100;
+      card.style.setProperty('--cx', x + '%');
+      card.style.setProperty('--cy', y + '%');
+    });
+  });
+})();
+
+
+/* ============================================================
+   8. BREATH PANEL — cosmic time calculator
+   ============================================================ */
+(function breathPanel(){
+  const ageSlider = document.getElementById('ageSlider');
+  const densitySlider = document.getElementById('densitySlider');
+  const ageVal = document.getElementById('ageVal');
+  const densityVal = document.getElementById('densityVal');
+  const humanYearsEl = document.getElementById('humanYears');
+  const kalpasEl = document.getElementById('kalpasVal');
+  const mahaYugasEl = document.getElementById('mahaYugas');
+  const breathFracEl = document.getElementById('breathFrac');
+  const bubbleCountEl = document.getElementById('bubbleCount');
+  if (!ageSlider) return;
+
+  // Cosmic constants (Sanātana reckoning)
+  const HUMAN_PER_DAY_OF_BRAHMA = 4.32e9;        // 4.32 billion human years
+  const KALPAS_PER_BRAHMA_DAY   = 1;             // a kalpa IS one day of Brahmā
+  const MAHA_YUGAS_PER_KALPA    = 1000;          // 1000 mahā-yugas per kalpa
+  const BRAHMA_LIFE_YEARS       = 100;           // century of Brahmā
+  const DAYS_PER_BRAHMA_YEAR    = 360;
+  // Total Brahmā life in his own years × full days × 2 (day+night) × kalpa
+  // For the "fraction of one exhalation" — Mahā-Viṣṇu's single breath ≈ one Brahmā life.
+
+  function fmt(n, digits=2){
+    if (!isFinite(n)) return '∞';
+    if (n === 0) return '0';
+    const abs = Math.abs(n);
+    if (abs >= 1e15) return (n/1e15).toFixed(digits) + ' ×10¹⁵';
+    if (abs >= 1e12) return (n/1e12).toFixed(digits) + ' tn';
+    if (abs >= 1e9)  return (n/1e9 ).toFixed(digits) + ' bn';
+    if (abs >= 1e6)  return (n/1e6 ).toFixed(digits) + ' mn';
+    if (abs >= 1e3)  return (n/1e3 ).toFixed(digits) + 'k';
+    if (abs < 0.01)  return n.toExponential(digits);
+    return n.toFixed(digits);
+  }
+
+  function updateSliderFill(slider){
+    const min = +slider.min, max = +slider.max, v = +slider.value;
+    const p = ((v - min) / (max - min)) * 100;
+    slider.style.setProperty('--p', p + '%');
+  }
+
+  function update(){
+    updateSliderFill(ageSlider);
+    updateSliderFill(densitySlider);
+
+    // Brahmā age in his own years: slider 0..1000 maps to 0..100 years
+    const brahmaYears = (+ageSlider.value) / 10;
+
+    // Total Brahmā days lived = brahmaYears × 360 days/yr (only counting daytimes for kalpa count)
+    const brahmaDays = brahmaYears * DAYS_PER_BRAHMA_YEAR;
+
+    // Human equivalent = brahmaYears × 360 (days) × 2 (day+night) × 4.32bn
+    const humanYears = brahmaYears * DAYS_PER_BRAHMA_YEAR * 2 * HUMAN_PER_DAY_OF_BRAHMA;
+
+    // Mahā-yugas = brahmaDays × 1000 (one kalpa = 1000 mahā-yugas)
+    const mahaYugas = brahmaDays * MAHA_YUGAS_PER_KALPA;
+
+    // Fraction of one Mahā-Viṣṇu breath (one breath = one full Brahmā life of 100 years)
+    const breathFrac = brahmaYears / BRAHMA_LIFE_YEARS;
+
+    ageVal.textContent = brahmaYears.toFixed(1) + ' years';
+    humanYearsEl.textContent = fmt(humanYears, 2);
+    kalpasEl.textContent     = fmt(brahmaDays, 2);
+    mahaYugasEl.textContent  = fmt(mahaYugas, 2);
+    breathFracEl.textContent = (breathFrac * 100).toFixed(2) + '%';
+
+    // Density label
+    const d = +densitySlider.value;
+    let label;
+    if (d < 40) label = 'sparse';
+    else if (d < 90) label = 'moderate';
+    else if (d < 150) label = 'dense';
+    else label = 'overflowing';
+    densityVal.textContent = label;
+
+    bubbleCountEl.textContent = d + ' bubbles';
+
+    // Tell the canvas to reflect new density + age
+    if (window.__breathState){
+      window.__breathState.density = d;
+      window.__breathState.age = brahmaYears;
+    }
+  }
+
+  ageSlider.addEventListener('input', update);
+  densitySlider.addEventListener('input', update);
+  update();
+})();
+
+
+/* ============================================================
+   9. BREATH STAGE CANVAS — small visualization in the panel
+   ============================================================ */
+(function breathStage(){
+  const cvs = document.getElementById('breathCanvas');
+  if (!cvs) return;
+  const ctx = cvs.getContext('2d');
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let W=0, H=0;
+  let bubbles = [];
+  window.__breathState = { density: 80, age: 50 };
+  let lastDensity = 80;
+
+  function resize(){
+    const r = cvs.getBoundingClientRect();
+    W = r.width; H = r.height;
+    cvs.width = W * dpr; cvs.height = H * dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    seed();
+  }
+
+  function makeBubble(initial=false){
+    const r = 4 + Math.pow(Math.random(), 1.8) * 26;
+    return {
+      x: Math.random() * W,
+      y: initial ? Math.random() * H : H + r + Math.random()*40,
+      r,
+      vy: -(0.18 + Math.random()*0.30) * (r < 12 ? 1.3 : 0.7),
+      vx: (Math.random() - 0.5) * 0.15,
+      drift: Math.random() * Math.PI * 2,
+      driftSpeed: 0.001 + Math.random() * 0.002,
+      pulse: Math.random() * Math.PI * 2,
+      pulseSpeed: 0.005 + Math.random() * 0.008,
+    };
+  }
+
+  function seed(){
+    const d = window.__breathState ? window.__breathState.density : 80;
+    bubbles = [];
+    for (let i=0; i<d; i++) bubbles.push(makeBubble(true));
+    lastDensity = d;
+  }
+
+  if (cvs.getBoundingClientRect().width > 0) resize();
+  // Re-resize after layout settles
+  setTimeout(resize, 50);
+  window.addEventListener('resize', resize);
+
+  function tick(){
+    const state = window.__breathState;
+    if (state && Math.abs(state.density - lastDensity) > 0){
+      const diff = state.density - bubbles.length;
+      if (diff > 0){
+        for (let i=0; i<diff; i++) bubbles.push(makeBubble(false));
+      } else if (diff < 0){
+        bubbles.length = state.density;
+      }
+      lastDensity = state.density;
+    }
+
+    // Brahmā age 0-100 controls overall "fullness" / glow
+    const ageScale = state ? (0.4 + (state.age / 100) * 0.7) : 1;
+
+    ctx.clearRect(0,0,W,H);
+
+    // Source glow at bottom center
+    const srcG = ctx.createRadialGradient(W/2, H, 0, W/2, H, H*0.7);
+    srcG.addColorStop(0, `rgba(212,160,76,${0.18 * ageScale})`);
+    srcG.addColorStop(0.5, `rgba(74,111,181,${0.10 * ageScale})`);
+    srcG.addColorStop(1, 'rgba(74,111,181,0)');
+    ctx.fillStyle = srcG;
+    ctx.fillRect(0,0,W,H);
+
+    for (let i=0; i<bubbles.length; i++){
+      const b = bubbles[i];
+      b.y += b.vy;
+      b.drift += b.driftSpeed;
+      b.x += b.vx + Math.sin(b.drift) * 0.20;
+      b.pulse += b.pulseSpeed;
+
+      if (b.y + b.r < -10){
+        bubbles[i] = makeBubble(false);
+        continue;
+      }
+      if (b.x < -b.r) b.x = W + b.r;
+      if (b.x > W + b.r) b.x = -b.r;
+
+      const pulse = 0.85 + Math.sin(b.pulse) * 0.15;
+      const a = 0.7 * pulse * ageScale;
+
+      const grad = ctx.createRadialGradient(b.x - b.r*0.3, b.y - b.r*0.3, b.r*0.1, b.x, b.y, b.r);
+      grad.addColorStop(0,   `rgba(242,237,222,${a*0.45})`);
+      grad.addColorStop(0.5, `rgba(212,160,76,${a*0.20})`);
+      grad.addColorStop(1,   `rgba(74,111,181,0)`);
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(b.x, b.y, b.r, 0, Math.PI*2); ctx.fill();
+
+      ctx.strokeStyle = `rgba(212,160,76,${a*0.55})`;
+      ctx.lineWidth = 0.6;
+      ctx.beginPath(); ctx.arc(b.x, b.y, b.r*0.92, 0, Math.PI*2); ctx.stroke();
+    }
+
+    requestAnimationFrame(tick);
+  }
+  if (!REDUCE) tick();
+})();
+
+
+/* ============================================================
+   10. INTERACTIVE BUBBLE FIELD (Act 5)
+   ============================================================ */
+(function interactiveField(){
+  const stage = document.getElementById('fieldStage');
+  const cvs = document.getElementById('fieldCanvas');
+  if (!cvs || !stage) return;
+  const ctx = cvs.getContext('2d');
+  const readout = document.getElementById('fieldReadout');
+  const rTitle = document.getElementById('fieldReadoutTitle');
+  const rMeta = document.getElementById('fieldReadoutMeta');
+
+  const NAMES = [
+    ['Brahmāṇḍa I',    'Kalpa 14 · age 1.9 bn yrs · Brahmā: 50th year'],
+    ['Brahmāṇḍa II',   'Kalpa 7 · 14 lokas · Indra: 28th'],
+    ['Brahmāṇḍa III',  'Time-rate ×1.04 · Sun-system: ~ Sirius cluster'],
+    ['Brahmāṇḍa IV',   'In dissolution-prelude · pralaya ≈ 0.001 brahmā-yr'],
+    ['Brahmāṇḍa V',    'Currently in Satya-yuga'],
+    ['Brahmāṇḍa VI',   'Brahmā: 1st day · creation just begun'],
+    ['Brahmāṇḍa VII',  'Anomalous time-rate — Mahā-Viṣṇu reference frame'],
+    ['Brahmāṇḍa VIII', 'Treta-yuga · Avatāra: Rāma-class'],
+    ['Brahmāṇḍa IX',   'Kali-yuga · year 432,000 / 5,127'],
+    ['Brahmāṇḍa X',    'Devas: 33 koṭi · Lokapālas: 8'],
+    ['Brahmāṇḍa XI',   'Mahā-pralaya in 27,000 mahā-yugas'],
+    ['Brahmāṇḍa XII',  'Garbhodakaśāyī present · lotus blooming'],
+    ['Brahmāṇḍa XIII', 'Far edge — nearing the wall of the egg'],
+    ['Brahmāṇḍa XIV',  'New sprout · Brahmā uninstantiated'],
+    ['Brahmāṇḍa XV',   'Civilizations: indeterminate · time-stream local'],
+    ['Brahmāṇḍa XVI',  'Sapta-loka stack complete · 14/14'],
+    ['Brahmāṇḍa XVII', "Drifting clockwise from the Lord's right shoulder"],
+    ['Brahmāṇḍa XVIII','Boundary state: half re-absorbed'],
+    ['Brahmāṇḍa XIX',  'Time-rate ×0.78 · slow stream'],
+    ['Brahmāṇḍa XX',   'Manvantara: Vaivasvata · Manu the 7th'],
+  ];
+
+  const TINTS = [[212,160,76], [199,122,43], [74,111,181], [232,154,143], [199,62,58]];
+
+  let W=0, H=0, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  let bubbles = [];
+  let mouse = { x:-9999, y:-9999, inside:false };
+  let hovered = -1;
+
+  function resize(){
+    const r = stage.getBoundingClientRect();
+    W = r.width; H = r.height;
+    cvs.width = W * dpr; cvs.height = H * dpr;
+    cvs.style.width = W+'px'; cvs.style.height = H+'px';
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  resize();
+  window.addEventListener('resize', () => { resize(); seed(); });
+
+  function seed(){
+    bubbles = [];
+    const isMobile = W < 600;
+    const COUNT = isMobile ? 18 : 32;
+    for (let i=0; i<COUNT; i++){
+      const r = 16 + Math.pow(Math.random(), 1.5) * (isMobile ? 38 : 60);
+      bubbles.push({
+        id: i,
+        x: 30 + Math.random() * (W-60),
+        y: 30 + Math.random() * (H-60),
+        r,
+        vx: (Math.random()-0.5) * 0.25,
+        vy: -(0.05 + Math.random()*0.20),
+        tint: TINTS[i % TINTS.length],
+        alpha: 0.55 + Math.random()*0.30,
+        pulse: Math.random()*Math.PI*2,
+        pulseSpeed: 0.005 + Math.random()*0.008,
+        scale: 1,
+        name: NAMES[i % NAMES.length],
+      });
+    }
+  }
+  seed();
+
+  stage.addEventListener('mousemove', e => {
+    const r = stage.getBoundingClientRect();
+    mouse.x = e.clientX - r.left;
+    mouse.y = e.clientY - r.top;
+    mouse.inside = true;
+  });
+  stage.addEventListener('mouseleave', () => {
+    mouse.inside = false; mouse.x = -9999; mouse.y = -9999;
+    hovered = -1;
+    readout.classList.remove('show');
+  });
+
+  function tick(){
+    ctx.clearRect(0,0,W,H);
+
+    let foundHover = -1;
+    for (let i=bubbles.length-1; i>=0; i--){
+      const b = bubbles[i];
+      const dx = mouse.x - b.x, dy = mouse.y - b.y;
+      if (dx*dx + dy*dy < b.r*b.r){ foundHover = i; break; }
+    }
+
+    if (foundHover !== hovered){
+      hovered = foundHover;
+      if (hovered >= 0){
+        const b = bubbles[hovered];
+        rTitle.textContent = b.name[0];
+        rMeta.textContent = b.name[1];
+        readout.classList.add('show');
+      } else {
+        readout.classList.remove('show');
+      }
+    }
+
+    for (let i=0; i<bubbles.length; i++){
+      const b = bubbles[i];
+      b.x += b.vx; b.y += b.vy;
+      b.pulse += b.pulseSpeed;
+
+      if (b.y + b.r < -10){ b.y = H + b.r + Math.random()*40; b.x = 30 + Math.random()*(W-60); }
+      if (b.x < -b.r) b.x = W + b.r;
+      if (b.x > W + b.r) b.x = -b.r;
+
+      if (mouse.inside){
+        const dx = b.x - mouse.x, dy = b.y - mouse.y;
+        const d2 = dx*dx + dy*dy;
+        const radius = 120;
+        if (d2 < radius*radius && d2 > 1){
+          const d = Math.sqrt(d2);
+          const force = (1 - d/radius) * 0.4;
+          b.x += (dx/d) * force; b.y += (dy/d) * force;
+        }
+      }
+
+      const targetScale = (i === hovered) ? 1.18 : 1;
+      b.scale += (targetScale - b.scale) * 0.12;
+
+      const t = b.tint;
+      const pulse = 0.88 + Math.sin(b.pulse) * 0.12;
+      const a = b.alpha * pulse;
+      const R = b.r * b.scale;
+
+      const grad = ctx.createRadialGradient(b.x - R*0.3, b.y - R*0.3, R*0.1, b.x, b.y, R);
+      grad.addColorStop(0,    `rgba(${t[0]},${t[1]},${t[2]},${a*0.55})`);
+      grad.addColorStop(0.55, `rgba(${t[0]},${t[1]},${t[2]},${a*0.15})`);
+      grad.addColorStop(1,    `rgba(${t[0]},${t[1]},${t[2]},0)`);
+      ctx.fillStyle = grad;
+      ctx.beginPath(); ctx.arc(b.x, b.y, R, 0, Math.PI*2); ctx.fill();
+
+      ctx.strokeStyle = (i === hovered) ? 'rgba(212,160,76,0.95)' : `rgba(${t[0]},${t[1]},${t[2]},${a*0.6})`;
+      ctx.lineWidth = (i === hovered) ? 1.4 : 0.7;
+      ctx.beginPath(); ctx.arc(b.x, b.y, R*0.92, 0, Math.PI*2); ctx.stroke();
+
+      ctx.fillStyle = `rgba(242,237,222,${a*0.7})`;
+      ctx.beginPath(); ctx.arc(b.x - R*0.34, b.y - R*0.34, Math.max(1.2, R*0.13), 0, Math.PI*2); ctx.fill();
+
+      ctx.strokeStyle = `rgba(${t[0]},${t[1]},${t[2]},${a*0.25})`;
+      ctx.lineWidth = 0.4;
+      ctx.beginPath(); ctx.arc(b.x, b.y, R*0.7, 0, Math.PI*2); ctx.stroke();
+    }
+    requestAnimationFrame(tick);
+  }
+  if (!REDUCE) tick();
+  else seed();
+})();
+
+
+/* ============================================================
+   11. HERO ICON REVEAL
+   ============================================================ */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('heroIcon')?.classList.add('in');
+  }, 250);
+});
+
+</script>
+</body>
+</html>
